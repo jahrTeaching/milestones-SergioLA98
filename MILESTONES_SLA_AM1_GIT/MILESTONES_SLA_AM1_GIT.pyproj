@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d943d5c4-45f2-419a-aaa2-a5bb6f323f81</ProjectGuid>
+    <ProjectGuid>1cf28453-4035-4ee7-9e95-a4bac95a3f15</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Numerico_MUSE_SLA.py</StartupFile>
+    <StartupFile>MILESTONES_SLA_AM1_GIT.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Numerico_MUSE_SLA</Name>
-    <RootNamespace>Numerico_MUSE_SLA</RootNamespace>
+    <Name>MILESTONES_SLA_AM1_GIT</Name>
+    <RootNamespace>MILESTONES_SLA_AM1_GIT</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,8 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Milestone1_SLA.py" />
-    <Compile Include="Numerico_MUSE_SLA.py" />
+    <Compile Include="MILESTONES_SLA_AM1_GIT.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
