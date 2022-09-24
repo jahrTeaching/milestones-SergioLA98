@@ -12,7 +12,7 @@ rc('text', usetex=True)
 plt.rc('text', usetex=True); plt.rc('font', family='serif')
 
 
-def prueba():
+def MIL01():
 
 
     #TIME and TIME STEP
