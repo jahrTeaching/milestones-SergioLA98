@@ -1,5 +1,5 @@
-# MUSE Milestones
-### [contents PDF](https://github.com/jahrWork/MUSE_orbits_S1/blob/master/doc/MUSE_weekly_milestones.pdf)
+# MUSE Milestones SERGIO LOPEZ ACEDO
+### 
 
 Create: 
 1. /sources/program.py. It should print "Hello" (first week) 
