@@ -12,12 +12,12 @@ rc('text', usetex=True)
 plt.rc('text', usetex=True); plt.rc('font', family='serif')
 
 
-def MIL01():
+def prueba():
 
 
     #TIME and TIME STEP
     tf = 20 
-    dt = [ 0.001]#, 0.02, 0.05, 0.001]
+    dt = [ 0.001, 0.02, 0.05, 0.001]
     
     #INITIAL CONDITIONS U0 MATRIX
     U0 = array( [1, 0, 0, 1])
@@ -40,11 +40,11 @@ def MIL01():
         U_CrankNic [ in_dt] [ :, 0] = U0
         U_RK4 [ in_dt] [ :, 0] = U0
 
-    for i in range ( 1, N): #Initial Node is in U0
+        for i in range ( 1, N): #Initial Node is in U0
 
-        U_Euler [ in_dt] [ :, i] = Euler( U_Euler [ in_dt] [ :, i-1], t, in_dt, F_Kepler)
-        U_CrankNic [ in_dt] [ :, i] = CrankNicolson( U_CrankNic [ in_dt] [ :, i-1], t, in_dt, F_Kepler )
-        U_RK4 [ in_dt] [ :, i]     = RK4( U_RK4 [ in_dt] [ :, i-1], t, in_dt, F_Kepler )
+            U_Euler [ in_dt] [ :, i] = Euler( U_Euler [ in_dt] [ :, i-1], t, in_dt, F_Kepler)
+            U_CrankNic [ in_dt] [ :, i] = CrankNicolson( U_CrankNic [ in_dt] [ :, i-1], t, in_dt, F_Kepler )
+            U_RK4 [ in_dt] [ :, i]     = RK4( U_RK4 [ in_dt] [ :, i-1], t, in_dt, F_Kepler )
 
 
         ## PLOTTING DIFFERENT SCHEMES
@@ -56,8 +56,8 @@ def MIL01():
     colours = ['red', 'orange', 'blue', 'purple']
 
     fig, ax = plt.subplots(1,1, figsize=(11,11), constrained_layout='true')
-    ax.set_xlim(-1.5,1.5)
-    ax.set_ylim(-1.5,1.5)
+    ax.set_xlim(-1.85,1.85)
+    ax.set_ylim(-1.85,1.85)
     ax.set_title('Kepler solution for Euler Scheme', fontsize=30)
     ax.grid()
     ax.set_xlabel(r'$x/r$',fontsize=15)
