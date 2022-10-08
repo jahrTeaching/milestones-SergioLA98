@@ -17,7 +17,7 @@ def prueba():
 
     #TIME and TIME STEP
     tf = 20 
-    dt = [ 0.001, 0.02, 0.05, 0.001]
+    dt = [ 0.001, 0.05, 0.02, 0.01]
     
     #INITIAL CONDITIONS U0 MATRIX
     U0 = array( [1, 0, 0, 1])

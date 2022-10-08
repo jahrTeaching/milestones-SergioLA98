@@ -9,21 +9,23 @@ import matplotlib.pyplot as plt
 from numpy import linspace
 
 
-def Simulation(tf, N, U0): 
-   
+def SimulationMIL2(tf, N, U0): 
+
     t = linspace(0, tf, N)
     schemes = [ Euler_Scheme, RK4_Scheme, CrankNicolson_Scheme, InvEuler_Scheme ]
-    LegendScheme = ["Euler Scheme", "RK4 Scheme", "Cranck Nicolson Scheme", "InvEuler_Scheme"]
-    
-    for method in range(len(schemes)-0):
-       U =  CauchyProblem( Kepler, t, U0, schemes[method]) 
-       print(method)
+    LegendScheme = ["Euler Scheme", "RK4 Scheme", "Cranck Nicolson Scheme", "InvEuler Scheme"]
+    delta = round(tf/(N-1),4)
+#    for indic in range(len(schemes)):
+    for indic in range(len(schemes)): #(a,b] en in range, enumerate
+       method = schemes[indic] 
+       U =  CauchyProblem( Kepler, t, U0, method) 
        fig, ax = plt.subplots(1,1, figsize=(11,11), constrained_layout='true')
        ax.set_xlim(-1.85,1.85)
        ax.set_ylim(-1.85,1.85)
-       ax.set_title("Kepler for "+ LegendScheme[method], fontsize=30)
+       ax.set_title("Kepler for "+ LegendScheme[indic], fontsize=30)
        ax.grid()
        ax.set_xlabel(r'$x/r$',fontsize=15)
        ax.set_ylabel(r'$y/r$',fontsize=15)
-       plt.plot(U[:,0] , U[:,1])
-       plt.show()
+       plt.plot(U[:,0] , U[:,1],label=r'$\Delta t$ = ' + str(delta))
+       ax.legend(loc=0, fancybox=False, edgecolor="black", ncol = 1, fontsize=16)
+       plt.show( )
