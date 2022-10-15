@@ -11,7 +11,7 @@ from numpy import linspace
 
 def SimulationMIL2(tf, N, U0): 
 
-    t = linspace(0, tf, N)
+    t = linspace(0, tf, N) #va de 0 a N-1 -> N puntos
     schemes = [ Euler_Scheme, RK4_Scheme, CrankNicolson_Scheme, InvEuler_Scheme ]
     LegendScheme = ["Euler Scheme", "RK4 Scheme", "Cranck Nicolson Scheme", "InvEuler Scheme"]
     delta = round(tf/(N-1),4)

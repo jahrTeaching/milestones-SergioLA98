@@ -4,7 +4,7 @@ Created on Tue Oct  4 19:39:39 2022
 
 @author: serg_
 """
-from scipy.optimize import newton
+from scipy.optimize import fsolve
 
 """
 ----------------------------------------------------------
@@ -47,7 +47,7 @@ def InvEuler_Scheme(U, dt, t, F):
     def InvEuler_Eq(X):     
           return X - U - dt * F(X, t)
 
-    return newton(func = InvEuler_Eq, x0 = U ) 
+    return fsolve(InvEuler_Eq, U ) 
 
 
 
@@ -55,10 +55,9 @@ def CrankNicolson_Scheme(U, dt, t, F ):
 
     def CN_Eq(X): 
          
-         return  X - a - dt/2 *  F(X, t + dt)
-
-    a = U  +  dt/2 * F( U, t)  
-    return newton( CN_Eq, U )
+         return  X - U - (F(X,t+dt) + F(U, t))*dt/2
+  
+    return fsolve( CN_Eq, U )
 
 
 
