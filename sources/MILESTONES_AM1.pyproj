@@ -21,6 +21,11 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AM1_LIBRARY\NUMERIC\ERROR.py" />
+    <Compile Include="AM1_LIBRARY\NUMERIC\NewtonSolve.py" />
+    <Compile Include="AM1_LIBRARY\ODES\EDO.py" />
+    <Compile Include="AM1_LIBRARY\ODES\TEMP_SCHEMES.py" />
+    <Compile Include="AM1_LIBRARY\PHYSICS\ORBITS.py" />
     <Compile Include="MILESTONES_AM1.py" />
     <Compile Include="MILESTONE_02.py">
       <SubType>Code</SubType>
@@ -28,6 +33,28 @@
     <Compile Include="MILESTONE_01.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MILESTONE_03.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AM1_LIBRARY\" />
+    <Folder Include="AM1_LIBRARY\NUMERIC\" />
+    <Folder Include="AM1_LIBRARY\NUMERIC\__pycache__\" />
+    <Folder Include="AM1_LIBRARY\ODES\" />
+    <Folder Include="AM1_LIBRARY\ODES\__pycache__\" />
+    <Folder Include="AM1_LIBRARY\PHYSICS\" />
+    <Folder Include="AM1_LIBRARY\PHYSICS\__pycache__\" />
+    <Folder Include="MILESTONE 3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AM1_LIBRARY\NUMERIC\__pycache__\ERROR.cpython-38.pyc" />
+    <Content Include="AM1_LIBRARY\NUMERIC\__pycache__\NewtonSolve.cpython-38.pyc" />
+    <Content Include="AM1_LIBRARY\ODES\__pycache__\EDO.cpython-38.pyc" />
+    <Content Include="AM1_LIBRARY\ODES\__pycache__\TEMP_SCHEMES.cpython-38.pyc" />
+    <Content Include="AM1_LIBRARY\PHYSICS\__pycache__\ORBITS.cpython-38.pyc" />
+    <Content Include="MILESTONE 3\Convergence rate of Cranck-Nicolson Scheme 0_1.png" />
+    <Content Include="MILESTONE 3\Convergence rate of Euler Scheme 0.1.png" />
+    <Content Include="MILESTONE 3\Convergence rate of Inverse Euler Scheme 0.1.png" />
+    <Content Include="MILESTONE 3\Convergence rate of RK4 Scheme 0.1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
