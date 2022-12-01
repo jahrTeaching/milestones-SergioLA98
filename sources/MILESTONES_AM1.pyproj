@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>391356ed-75be-4c1c-ab4e-19b32bb85a13</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>MILESTONES_AM1.py</StartupFile>
+    <StartupFile>HITO 7\Pruebahito7.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,13 @@
     <Compile Include="AM1_LIBRARY\ODES\EDO.py" />
     <Compile Include="AM1_LIBRARY\ODES\TEMP_SCHEMES.py" />
     <Compile Include="AM1_LIBRARY\PHYSICS\ORBITS.py" />
+    <Compile Include="CLASES\ClaseDecorator.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CLASES\Clase_10_20.py" />
+    <Compile Include="HITO 7\Pruebahito7.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MILESTONES_AM1.py" />
     <Compile Include="MILESTONE_02.py">
       <SubType>Code</SubType>
@@ -43,7 +50,9 @@
     <Folder Include="AM1_LIBRARY\ODES\__pycache__\" />
     <Folder Include="AM1_LIBRARY\PHYSICS\" />
     <Folder Include="AM1_LIBRARY\PHYSICS\__pycache__\" />
+    <Folder Include="CLASES\" />
     <Folder Include="MILESTONE 3\" />
+    <Folder Include="HITO 7\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AM1_LIBRARY\NUMERIC\__pycache__\ERROR.cpython-38.pyc" />
