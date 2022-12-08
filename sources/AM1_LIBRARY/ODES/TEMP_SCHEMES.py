@@ -26,13 +26,14 @@ This Module includes different temp schemes to integrate numerical problems
 """
 
 def Euler_Scheme(U, dt, t, F):
-        
+    Euler_Scheme.__name__ = "Euler"    
     return U + dt * F(U, t)
 
 
 
 def RK4_Scheme(U, dt, t, F):
 
+    RK4_Scheme.__name__ = "Runge-Kutta 4"
     k1 = F(U,t)
     k2 = F(U + k1 * dt/2, t + dt/2)
     k3 = F(U + k2 * dt/2, t + dt/2)
@@ -44,6 +45,7 @@ def RK4_Scheme(U, dt, t, F):
 
 def InvEuler_Scheme(U, dt, t, F):
     
+    InvEuler_Scheme.__name__ = "Inverse Euler"
     def InvEuler_Eq(X):     
           return X - U - dt * F(X, t)
 
@@ -53,11 +55,36 @@ def InvEuler_Scheme(U, dt, t, F):
 
 def CrankNicolson_Scheme(U, dt, t, F ): 
 
+    CrankNicolson_Scheme.__name__ = "Crank Nicolson"
     def CN_Eq(X): 
          
          return  X - U - (F(X,t+dt) + F(U, t))*dt/2
   
     return newton( CN_Eq, U )
 
+
+def LeapFrog (U, dt, t, F ):
+     
+     LeapFrog.__name__ = "LeapFrog"
+     
+     if t == 0:
+         U = U + dt*F(U, t) #Euler Inizialitation
+     else:
+        p = int(len(U)/2)
+        
+        U_aux = U #puntero mismo ID
+        aux = F (U_aux, t)
+
+        U_aux [p :] += aux[p :]*dt/2.0 #no cambia ID, actualiza
+        U_aux [: p] += aux[: p]*dt
+
+        aux = F (U_aux, t)
+        
+        U_aux [p :] +=  aux[p :]*dt/2.0
+        
+        #U = U_aux innecesario, Uaux tiene el mismo id, es un alias
+        # se va actualizando
+        
+     return U
 
 

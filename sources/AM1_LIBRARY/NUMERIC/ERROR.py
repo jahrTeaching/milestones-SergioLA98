@@ -75,3 +75,18 @@ def ErrorNum( Kepler, Scheme, t, U0, order):
         E[i,:] = (U2[2*i,:] - U1[i,:])/( 1 - 1./(2**order))
     
     return E
+
+def Stabilityregion(Scheme):
+    
+    N = 100
+    x, y = linspace(-5, 5, 100), linspace(-5, 5, 100)
+    rho =  zeros( (N, N),  dtype=float64)
+
+    for i in range(N): 
+      for j in range(N):
+
+          w = complex(x[i], y[j])
+          r = Scheme( 1., 1., 0., lambda u, t: w*u )
+          rho[i, j] = abs(r)
+          
+    return rho, x, y
