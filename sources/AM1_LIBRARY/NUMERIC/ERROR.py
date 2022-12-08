@@ -77,9 +77,9 @@ def ErrorNum( Kepler, Scheme, t, U0, order):
     return E
 
 def StabilityRegion(Scheme):
-    
+    #PARA METODOS UNIPASO
     N = 100
-    x, y = linspace(-5, 5, 100), linspace(-5, 6, 100)
+    x, y = linspace(-5, 5, 100), linspace(-5, 5, 100)
     rho =  zeros( (N, N),  dtype=float64)
 
     for i in range(N): 

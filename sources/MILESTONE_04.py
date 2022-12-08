@@ -30,17 +30,32 @@ def Mil4( tf, N, U0):
         #plt.show()
         plt.close()
         
+        
         rho,x,y = StabilityRegion(schemes[i])
         
         plt.title(f'Stability Region of {schemes[i].__name__}')
-        plt.xlabel("X")
-        plt.ylabel("Y",rotation = 0)
+        plt.xlabel("Re")
+        plt.ylabel("Im",rotation = 0)
         #plt.axis('equal')
         plt.grid()
-        #plt.contour( x, y, transpose(rho), levels = [0, 1],colors = ['#b300ff'])
-        plt.contour( x, y, transpose(rho), linspace(0, 1, 20) )
-        #plt.colorbar()
-        plt.contourf( x, y, transpose(rho), levels = [0,1], colors = 'whitesmoke')
+    
+        if schemes[i] == LeapFrog:
+            Im = linspace(-5,5,100)
+            Re = zeros(100)
+            plt.plot(Re, Im, color = 'y')
+            #plt.show()
+        else:
+            plt.contour( x, y, transpose(rho), linspace(0, 1, 20) )
+            plt.contourf( x, y, transpose(rho), levels = [0,1], colors = 'whitesmoke')
+        
+        color2 = ['b','g','r']
+        for j in range(size(N)):
+            dt = tf/(N[j]-1)
+            plt.plot([0,0], [dt,-dt], 'o', color = color2[j], label = 'dt =' + str(dt) + ' s')
+            
+        plt.legend()
+        plt.xlim([-5,5])
+        plt.ylim([-5,5])
         plt.savefig('MILESTONE 4/' + 'SR of'+ schemes[i].__name__+'.png')
         #plt.show()
         plt.close()
