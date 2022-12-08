@@ -4,8 +4,8 @@ Created on Tue Oct  4 19:39:39 2022
 
 @author: serg_
 """
-from AM1_LIBRARY.NUMERIC.NewtonSolve import newton
-
+#from AM1_LIBRARY.NUMERIC.NewtonSolve import newton
+from scipy.optimize import newton, fsolve
 """
 ----------------------------------------------------------
 TEMP_SCHEMES

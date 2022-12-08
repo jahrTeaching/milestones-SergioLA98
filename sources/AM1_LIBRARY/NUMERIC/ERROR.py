@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from numpy import linspace, zeros, log10, array, round_, reshape# , ones, vstack
-from numpy.linalg import norm #, lstsq
+from numpy import linspace, zeros, log10, array, round_, reshape, float64
+from numpy.linalg import norm 
 from AM1_LIBRARY.ODES.EDO import CauchyProblem
 from sklearn.linear_model import LinearRegression
 
@@ -76,17 +76,18 @@ def ErrorNum( Kepler, Scheme, t, U0, order):
     
     return E
 
-def Stabilityregion(Scheme):
+def StabilityRegion(Scheme):
     
     N = 100
-    x, y = linspace(-5, 5, 100), linspace(-5, 5, 100)
+    x, y = linspace(-5, 5, 100), linspace(-5, 6, 100)
     rho =  zeros( (N, N),  dtype=float64)
 
     for i in range(N): 
       for j in range(N):
 
           w = complex(x[i], y[j])
-          r = Scheme( 1., 1., 0., lambda u, t: w*u )
+          r = Scheme( 1., 1., 0., lambda u, t: w*u ) #lambda es una vable q puede ser lo q sea luego
+          # Scheme( U, dt, t, F )
           rho[i, j] = abs(r)
           
     return rho, x, y
