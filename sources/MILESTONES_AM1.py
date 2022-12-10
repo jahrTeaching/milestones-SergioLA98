@@ -18,3 +18,6 @@ import MILESTONE_06
 
 #MILESTONE_05.Mil5( tf = 30, N = [20001], Nb = 4, Nc = 3)
 
+MILESTONE_06.Mil6(mu=1.2151e-2, tf=350, N=20001, epsorder = 1e-3)
+#mu = 3.0039e-7 #Tierra-Sol
+#mu = 1.2151e-2 #Tierra-Luna

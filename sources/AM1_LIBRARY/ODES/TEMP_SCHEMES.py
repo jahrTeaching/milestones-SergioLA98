@@ -96,7 +96,7 @@ def Embedded_RK(U, dt, t, F):
     Method = ["HeunEuler21", "RK21", "BogackiShampine", "DOPRI54",
               "CashKarp", "Fehlberg54", "Fehlberg87", "Verner65", 
               "RK65", "RK87"] #from 0 to 9
-    RK_Method = Method[3]
+    RK_Method = Method[9]
     #print(RK_Method)
     tol = 1e-7
 
