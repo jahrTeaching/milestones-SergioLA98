@@ -4,8 +4,9 @@ Created on Wed Oct  5 18:29:45 2022
 
 @author: serg_
 """
-
+from AM1_LIBRARY.NUMERIC.NewtonSolve import Jac, newton
 from numpy import array, sqrt, zeros
+from numpy.linalg import norm, eig
 from scipy.optimize import newton, fsolve
 
 def Kepler(U, t): 
@@ -46,3 +47,13 @@ def LG_Points( U0 ,N ,mu ):
         LGP[i,:] = fsolve(F, U0[i,0:2])
         
     return LGP
+
+def LP_Stab( U0, mu ):
+
+    def F(Y):
+        return CR3BP(Y, 0 , mu)
+
+    A = Jac(F, U0)
+    values, vectors = eig(A)
+
+    return values

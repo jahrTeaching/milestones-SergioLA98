@@ -11,7 +11,7 @@ from numpy.linalg import inv, norm
 def Jac(F, U):
 	N = size(U)
 	J= zeros([N,N])
-	t = 1e-3
+	t = 1e-10
 
 	for i in range(N):
 		xj = zeros(N)
